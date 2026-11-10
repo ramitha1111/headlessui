@@ -16,6 +16,7 @@ env:
 jobs:
   install:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Begin CI...
@@ -36,6 +37,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     needs: [install]
+    timeout-minutes: 5
 
     steps:
       - name: Begin CI...
@@ -52,6 +54,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     needs: [install]
+    timeout-minutes: 10
 
     steps:
       - name: Begin CI...
@@ -69,6 +72,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs: [install]
+    timeout-minutes: 5
 
     steps:
       - name: Begin CI...
@@ -85,6 +89,7 @@ jobs:
   check-types:
     runs-on: ubuntu-latest
     needs: [build]
+    timeout-minutes: 5
 
     steps:
       - name: Begin CI...
